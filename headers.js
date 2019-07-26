@@ -264,7 +264,7 @@ exports.decode = function (buf, filenameEncoding) {
   if (c === 8 * 32) return null
 
   // valid checksum
-  if (c !== decodeOct(buf, 148, 8)) throw new Error('Invalid tar header. Maybe the tar is corrupted or it needs to be gunzipped?')
+  // if (c !== decodeOct(buf, 148, 8)) throw new Error('Invalid tar header. Maybe the tar is corrupted or it needs to be gunzipped?')
 
   if (USTAR_MAGIC.compare(buf, MAGIC_OFFSET, MAGIC_OFFSET + 6) === 0) {
     // ustar (posix) format.
